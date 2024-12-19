@@ -1,4 +1,4 @@
-(set-face-attribute 'default nil :font "Borg Sans Mono")
+;;(set-face-attribute 'default nil :font "Borg Sans Mono")
 
 (setq inhibit-startup-message t)
 (setq default-directory "C:/Users/Guest/Gabriel")
