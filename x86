@@ -1,0 +1,255 @@
+This file lists all x86 instructions from 'felixcloutier.com/x86'
+and organizez them based NOT on their instruction label alphabetical order but on their translated binary form because i actually like to write in binary form (0 and 1s) and not in hexadeciaml, alphanumerical which is kinda shit i dont care about it i like to type fucking binary because i think binary is actually cool as hell plus like binary doesnt even mean binary when you talk about it means some shitty object file with some random looking ass glyphs that have no fucking meaning, (they map to the instruction) but like you want to write your binary and convert that into the respective "MaaChInE code" because then like your computer can fucking read the shit and it works whatver but like whatever i like both because they're both based but i want to convert my binary into the unicode glyph that the cpu can read and process although maybe i should just write in unicode glyphs...
+... i like both OKAY??!
+
+I want both the binary nybble form and the unicode ascii form but the unicode ascii form goes first because its actually what the cpu fucking understands reads understand and reads and process and form the binary executable and then i get my code ready
+
+binary is kinda fucking retarded because it has no semblance to the communication with the cpu, the only thing going for it is that it is representative of the underlying process of the semiconductors being turned on/off in order to do whatever...
+
+so its based in that sense but its best to do both in tandem to remain as based as possible to the cpu..
+
+basically..
+you want to write to memory the commands that map to the instruction which every editor has some different glyph but the standard is unicode ascii utf-8 but the problem is that most text editors have like a different set of glyphs for representing the same instructions,
+so, what we gottado is like find the instructions and just put them in text, give them whatever unicode representation, which like ITS ARBITRARY LMAO we can just do nybbles for each instruction, for instance:
+
+in EMACS: ^@ is hexpair 00 i dont know if the processor can only read nybble or byte but i thought that since the processor can parse nybbles to like map to some alphanumerical hex symbol then it surely can parse nybbles and i can just write the hex representative of 0 and just like is a valid unit instruction in the sense we're talking here of the basic unit of information
+
+assuming it cant it parses nybbles by first parsing a byte then lets say it parses hex: 00
+then that means in binary form its : 0000 0000
+so yes what about it
+in emacs, binary-form: 0000 0000, hex-form: 00, is glyped in the editor as ^@
+so once again
+
+binary-form: 0000 0000
+hex-form: 00
+emacs-editor-form: ^@
+
+
+so whats the problem then?
+we can write our own editor glyps so like studying the glyph is pointless. might as well just study the control co..
+wait a minute,...
+
+where's the control character or control key or whats mapped to ^@??? its not 0000 0000, or 00, those are just representative values of the actual thing that takes place...
+is it ^@ thats the mapped instruction in memory???
+i have no clue.. well, i have seen editors represent the same differently, so it surely cant be the representative text,
+
+so,, whats mapped behind ^@?
+
+we need to study an editor...
+well, assuming there's some control character hidden underneath, we dont know what its called or what about it lets assume its there..
+
+we can still label it anyway we want in editor so its not the glyphs of whatever editor what's important but it may be because maybe the glyphs are representative of the position in the ascii table of the binary, hex whatever value you wanted to communicate so
+maybe
+0000 0000 maybes directly to ^@ in the ascii table, lets check.
+
+ok guys no, the character '^' is of decimal value 94 in ascii, like wtf 94? hex: 5E
+why 5E idk count i guess..
+
+0 is 0
+9 is 9
+A is 10
+F is 15
+then add another 0
+10 is 16
+1F is 
+well 16 + (9+6) which is (15) then you can add 16 + 15 which is 31?
+so 1F is 31? YEAH 1F is 31 good job boys
+so yeah 5E is most likely 94 i havent counted let me check
+5 means 5 sets of 0-9 so 9*5 = 45 plus E which means
+at least 5 sets of 6 which is 5*6=30 plus the remaining 5 that counts to 5
+so all in all its 45 + 30 + 5 = which is 80?? nooo,, somethings wrong guys...
+
+so lets review its
+0-9
+then A-F
+
+but pairs together like the number grows..
+
+integer  base-16 alphanumerical
+      0                       0
+      9                       9
+     10                       a
+     15                       f
+     16                      10 <- but how why ..what how from f to 10? wth? no.. something weir there but if i label it as 0f then 10 makes much more sense but does a disservice .. its best to reason out why f jumps to 10...
+     			     	       	       	 i cant add another letter its base 16, thats one, f is the limit, if the limit is f i can only either go back or start from the initial base-16 numeral which is 0, but 0 would just land me at square one, so it cant be zero but zero is good, i could've reverse back to e but that is not what i mean when i'm trying to increase the value of the number,, i want to add not go back but who care i can use e and then add some number that expresses i increased the value, or i can start over from 0 and add some number to express i increased the value which ever you like, most people start over from 0 becausei guess it makes more sense but its what ulike lets explore the weird one
+
+so we have f
+LMAO i skipped reversed incrementation count
+so f then e -> all the way back to a but we need to add a symbol character to represent the incrementation, we can add e-1 e-2 e-3 e-4? thats cool.. we can add e
+
+
+we are using base-16 meaning there's no g
+we have two options then, ( why base-16?) (idk, lets pretend its what cpus are using and thats why we're using it)... so we can use other bases like base-32 or base-64 whatever you like which obviously extends the number span available, idk why are we using base-16 , but we just are and want to and dont care at the moment about other bases its not bad to explore other bases its just at the moment not grounded in what cpus are currently using to transmit information to the person using them you might do a simulation that sits on top of your base-16 computer but we don't care about that right now we need to use base-16 and talk to the computer, its a programmatic lesson not a number system lesson..
+ok so lets carry on with base-16 pretending its just what practically all if not every computer is using right now to transmit and relay whatsapp messages, lets go to base-32 then..
+lmao
+
+okay so base-32 would look like this:
+
+its not simply called base-32 because that just means like a set of 32 numbers, its not 32 numbers in this case we were talking about base-16 hex but the full name would be base-16 alphanumerical because when you just say base-16 its not known you want to also use letters in the counting system. its more so a counting system than a numeral system,
+base-16 counting system? or base-16 alphanumerical
+counting system is something broad that applies to most number systems, letter systems, whatever system of words ,letters , etc symbols you may use.
+
+but its not a system in itself
+base-16 alphanumerical is a counting system
+but yes base-16 alphanumerical can also be named a base-16 counting system, its not a number system because it also has letters so its an alphanumerical counting system.
+
+so its an alphanumerical base-16 counting system ; hex..
+we wanted to destroy the notion of base-32 so lets go
+lets forget alphanumerical and just go with base-32
+
+base-32 would look something like this:
+in numeral system:
+0-31 done
+in base-32 alphanumeral system:
+we have 32 symbols
+0-31 no
+because the letters where
+0-15 ok .. maybe because its 31 so that means we are missing the remaining letters
+but 31 is an odd number if you count from 1 but remember to count from 0 and its an even number so we stop at 15 which equals 16 numbers then 16 letters so
+0-15 is ok
+then a-p which are equal to 16 letters
+so a-p is 16 letters?
+yes a-p is equal to 16 letters because when you count from a to p you get a total
+number of 16 letters i dont want to count the letter..
+
+a 1
+b 2
+c 3
+d 4
+e 5
+f 6
+g 7
+h 8
+i 9
+j 10
+k 11
+l 12
+m 13
+n 14
+o 15
+p 16
+
+and we have 16 letters wow!!
+
+so a-p is 16 letters
+
+so base-32 alphanumeral system is
+0-p
+the span of 0-p covers 32 symbols
+0-15 covers 16
+a-p covers 16
+16+16 = 32! yay!! !
+
+oka the same goes with base-64
+so base-64 is
+0-63
+why do we begin at 0?
+well computers
+
+we dont need to begin at zero or any other numeral system we can use whatever we like
+
+podemo decir que numeral system x ready to targ z b d odnoa iz
+
+0-15 then 15a - 15o? 15p? idk i forgot the alphabet
+0
+     25                      19
+     26                      1a
+     31                      1f
+     32                      20     
+
+
+
+
+
+
+
+
+, in 4 bit form (nybble), (because its the atom of x86 code.. i dont know how to phrase it, you cant go lower than a nybble but its the set of nybbles that matters, because an alphanumerical (0-9 A-F) need only 4 bits (nybble) to be expressed... whatever you get the jist of the thing..
+
+You need a nybble so I ordered it in nybble form, starting from the lowest nybble value.
+if you notice the nybble is not the only thing that matters but the string of nybbles, dont get confused because a nybble starts withe 0 and think "oh thats a lower value than this other set of nybble that starts with 1", instead look at the number of nybbles... and compare based on the amount and if they have the same number of nybbles then you can gauge its size respective to the other set of nybbles just dont go comparing 0000 0001 with 0010 0010 0001 0010 0010
+
+0000 0001
+0000 0010 ok to compare
+
+1000 0001                           <- like this one starts with 1 is it greater?
+0000 1010 0101 0101 0101 01010      <- than this one that starts with zero????
+
+ANSWER: no, because of the number of the amount of information in the second one is greater
+might be like this:
+
+1000 0001                              <- isnt this
+0000 0000 0000 0000 1000 0001          <- the same as this?
+
+ANSWER: well, yes and no. because obviously the second one holds more space/information
+
+basically its a greater set of data by the span it covers, it may say one but its actually sayin in the realm of 1012830912309120 1
+while in the first one it says, in the realm of 120319 1.. you get it? it holds more memory space, but i like saying it holds more information which is mathematically true and accurate in terms of the cpu's stuff idk
+
+
+
+0000 0000
+0000 0001
+0000 0101
+0000 0110
+ADD
+
+0001 0000
+0001 0001
+0001 0010
+0001 0011
+0001 0100
+0001 0101
+ADC
+
+0011 0111
+AAA
+
+0011 1111
+AAS
+                    -
+1000 0000
+1000 0001
+1000 0011
+ADC
+                    -
+1000 0000
+1000 0001
+1000 0011
+ADD
+
+1101 0100 0000 1010
+AAM
+
+1101 0101 0000 1010
+AAD
+
+0110 0110 0000 1111 0011 1000
+AESDEC
+
+0110 0110 0000 1111 0101 1000
+ADDPD
+
+0110 0110 0000 1111 1101 0000
+ADDSUBPD
+
+1111 0010 0000 1111 0101 1000
+ADDSD
+
+1111 0010 0000 1111 1101 0000
+ADDSUBPS
+
+1111 0011 0000 1111 0011 1000
+AESDEC128KL
+
+1111 0011 0000 1111 0101 1000
+ADDSS
+
+1111 0011 0000 1111 1101 1111
+AESDEC256KL
+
+0110 0110 0000 1111 0011 1000 1111 0110
+ADCX
+
+1111 0011 0000 1111 0011 1000 1111 0110
+ADOX
